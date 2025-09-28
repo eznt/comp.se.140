@@ -21,7 +21,7 @@ class Storage(http.server.BaseHTTPRequestHandler):
                 with open(LOG_PATH, "rb") as file:
                     data = file.read()
             except FileNotFoundError:
-                data = ""
+                data = b""
             self.send_response(200)
             self.send_header("Content-Type", "text/plain")
             self.end_headers()

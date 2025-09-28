@@ -1,0 +1,13 @@
+$ docker container ls
+CONTAINER ID   IMAGE                COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+625c38d3952a   exercise1-service1   "python service.py"      15 seconds ago   Up 2 seconds    0.0.0.0:8199->8199/tcp, [::]:8199->8199/tcp   exercise1-service1-1
+e464a987dfae   exercise1-service2   "docker-entrypoint.s…"   15 seconds ago   Up 13 seconds                                                 exercise1-service2-1
+2826c6e30a9b   exercise1-storage    "python storage.py"      15 seconds ago   Up 2 seconds                                                  exercise1-storage-1
+
+$ docker network ls
+NETWORK ID     NAME                DRIVER    SCOPE
+3084a99a0b0e   bridge              bridge    local
+209a3ceee3fe   exercise1_private   bridge    local
+ac722e307b65   exercise1_public    bridge    local
+4e69c437aad2   host                host      local
+994ec89b1404   none                null      local

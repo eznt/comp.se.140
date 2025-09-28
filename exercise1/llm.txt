@@ -1,0 +1,10 @@
+Used LLM tool was ChatGPT5.
+Motivation to use it was for it to act as a search engine of sorts or like targeted lookup to reduce time spent on reading actual docs or the same stuff from the internet.
+Also to ask to provide quick code examples on simple stuff like how to get the current time or amount of free disk space in javascript.
+
+How it helped:
+    - Helped to recap docker related specifics and give docker commands
+    - Guide to simple code related questions and examples
+
+I did not notice any obvious mistakes in the responses it gave.
+It was able to provide answers to all the things I asked.

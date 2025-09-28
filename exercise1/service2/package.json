@@ -1,0 +1,12 @@
+{
+    "name": "service2",
+    "version": "1.0.0",
+    "main": "service.js",
+    "type": "module",
+    "scripts": {
+      "start": "node service.js"
+    },
+    "dependencies": {
+      "express": "^4.19.0"
+    }
+  }

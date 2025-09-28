@@ -10,15 +10,15 @@ class Storage(http.server.BaseHTTPRequestHandler):
         if self.path == "/log":
             n = int(self.headers.get("Content-Length", 0))
             record = self.rfile.read(n)
-            with open(LOG_PATH, "a", encoding="utf-8") as file:
-                file.write(record + "\n")
+            with open(LOG_PATH, "ab") as file:
+                file.write(record + b"\n")
             self.send_response(200)
             self.end_headers()
 
     def do_GET(self):
         if self.path == "/log":
             try:
-                with open(LOG_PATH, "r", encoding="utf-8") as file:
+                with open(LOG_PATH, "rb") as file:
                     data = file.read()
             except FileNotFoundError:
                 data = ""
@@ -29,7 +29,7 @@ class Storage(http.server.BaseHTTPRequestHandler):
 
 def main():
     server = http.server.HTTPServer(("0.0.0.0", PORT), Storage)
-    print(f"Storage running on port {PORT}")
+    print(f"Storage running on port {PORT}", flush=True)
     server.serve_forever()
 if __name__ == "__main__":
     main()

@@ -47,11 +47,11 @@ class Service(http.server.BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-Type", "text/plain")
         self.end_headers()
-        self.wfile.write(text)
+        self.wfile.write(text.encode("utf-8"))
 
 def main():
     server = http.server.HTTPServer(("0.0.0.0", PORT), Service)
-    print(f"Service 1 running on port {PORT}")
+    print(f"Service 1 running on port {PORT}", flush=True)
     server.serve_forever()
 if __name__ == "__main__":
     main()
